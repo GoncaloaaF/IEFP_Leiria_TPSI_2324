@@ -24,15 +24,11 @@ class ListaLigada:
 
 
     def list_all_nodes(self):
-
-
         if self.head is None:
             print("Lista vazia")
             return
 
         cur = self.head
-        while cur.next is not None:
-            pass
-
-
-
+        while cur:
+            print(cur.data)
+            cur = cur.next
