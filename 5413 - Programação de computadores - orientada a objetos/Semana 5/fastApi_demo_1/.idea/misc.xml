@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="fastAPI_APZ_Leiria" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="fastAPI_APZ_Leiria" project-jdk-type="Python SDK" />
+</project>
