@@ -1,7 +1,14 @@
 import java.math.BigInteger
+fun nome2(){
+    println("Ola Mundo 2 fun")
+
+}
 
 fun main() {
+    nome2()
+    nome()
 
+    println("------")
     /*
     comentario
     multilinha
@@ -144,5 +151,55 @@ fun main() {
 
         println(c)
     }
-    
+
+    ola_mundo("Gonçalo")
+    ola_mundo2("Goçalo", 2024)
+
+    val msg = novo_nome("Goçalo", 2024)
+    println(msg)
+
+    val myNome = "Gonçalo Feliciano"
+    for (c in myNome){
+
+        if (c == 'n'){
+            continue
+        }
+
+        if (c == ' '){
+            break
+        }
+
+
+        print(c)
+        print(" ")
+    }
+
 }
+
+
+fun nome(){
+    println("Ola Mundo fun")
+
+}
+
+fun ola_mundo(nome:String){
+    println("Ola Mundo, " + nome)
+
+}
+
+fun ola_mundo2(nome:String, ano:Int){
+    println("Ola Mundo, $nome em $ano")
+}
+
+fun novo_nome(nome:String, ano:Int): String{
+    return "Ola Mundo, $nome em $ano"
+}
+
+fun soma(v1:UInt, v2:UInt): UInt{
+    return v1 + v2
+
+}
+
+
+
+
