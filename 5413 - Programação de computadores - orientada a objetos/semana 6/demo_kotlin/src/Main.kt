@@ -73,8 +73,76 @@ fun main() {
     var d:Double = 10.toDouble()
    // var d2:Double = 10
 
+    var i = 10
+    var f = 10.1f
+    var s = "10"
+    var soma = (d + f + i)
+    println(soma)
 
 
 
+    println("-----")
+    val time = 10
+    if (time == 10) {
+        println("Good morning.")
+    } else if (time < 20) {
+        println("Good day.")
+    } else {
+        println("Good evening.")
+    }
 
+    println("-----")
+
+    var day = 9
+    val result = when (day) {
+        1 -> "Monday"
+        2 -> "Tuesday"
+        3 -> "Wednesday"
+        4 -> "Thursday"
+        5 -> "Friday"
+        6 -> "Saturday"
+        7 -> "Sunday"
+        else -> "Invalid day."
+    }
+    println(result)
+    println("-----")
+
+    day = 2
+    when (day) {
+        1 -> println("Monday")
+        2 -> println("Tuesday")
+        3 -> println("Wednesday")
+        4 -> println("Thursday")
+        5 -> println("Friday")
+        6 -> println("Saturday")
+        7 -> println("Sunday")
+        else -> println("Invalid day.")
+    }
+    println(result)
+
+    println("-----")
+
+    var j = 0
+
+    while (j < 10) {
+        println("o valor de j ainda é menor que 10")
+        println("j=" + j)
+        j++
+    }
+
+    println("-----")
+    for (i in 0..10 ){
+        println(i)
+    }
+    println("-----")
+
+    for (i in 20..10 ){
+        println(i)
+    }
+
+    for (c in 'a'..'f'){
+
+        println(c)
+    }
+    
 }
