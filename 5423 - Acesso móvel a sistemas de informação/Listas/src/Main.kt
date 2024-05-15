@@ -136,7 +136,29 @@ fun main() {
     println(dict2.values)
 
 
+    var f = "xtestex"
+
+    println( f[0] == 't')
+    println( f.contains("tes"))
+    println( f.startsWith("tes"))
+    println( f.startsWith("xtes"))
+    println( f.endsWith("tex"))
 
 
+    var f2 = "21"
+    f2.toInt()
+
+    f2 = "2"
+
+    println(f2.toIntOrNull())
+
+
+
+    /*
+    'e' <- char
+    "e" <- String
+
+
+     */
 
 }
