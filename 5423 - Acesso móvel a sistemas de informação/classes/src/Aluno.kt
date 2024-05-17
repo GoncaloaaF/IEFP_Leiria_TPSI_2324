@@ -1,5 +1,17 @@
 class Aluno {
-    var nome = "Sem nome"
-    var idade = -1
-    var turma = Turma("", "",123)
+    var nome:String? = null
+    var idade:Int? = null
+    var turma:Turma? = null
+
+
+    constructor(){
+        nome = "Zeca"
+        idade = -1
+        turma = null
+        println("Nome do titulo")
+
+    }
+
+
+
 }
