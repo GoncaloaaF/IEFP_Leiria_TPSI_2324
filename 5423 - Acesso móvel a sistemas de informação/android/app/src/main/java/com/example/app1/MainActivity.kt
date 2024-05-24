@@ -22,6 +22,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnMainSubmit: Button
 
 
+
+    private lateinit var etMainNum1: EditText
+    private lateinit var etMainNum2: EditText
+    private lateinit var tvMainSoma: TextView
+    private lateinit var btnMainSoma: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,19 +39,39 @@ class MainActivity : AppCompatActivity() {
         etMainIdade  = findViewById(R.id.etMainIdade)
 
 
-
         tvMainHeader.text = "Novo Texto"
-
         btnMainSubmit.setOnClickListener {
-            var nome = "Anonimo"
+            var nome = "Anonim"
 
             if (etMainNome.text.isNotEmpty()){
                 nome = etMainNome.text.toString()
             }
-
             tvMainMsg.text = "Ola $nome, com ${etMainIdade.text}"
         }
 
+
+        /*
+
+    private lateinit var tvMainSoma: TextView
+    private lateinit var btnMainSoma: Button
+
+         */
+
+        etMainNum1 = findViewById(R.id.etMainNum1)
+        etMainNum2 = findViewById(R.id.etMainNum2)
+        tvMainSoma = findViewById(R.id.tvMainSoma)
+        btnMainSoma = findViewById(R.id.btnMainSoma)
+
+
+        btnMainSoma.setOnClickListener {
+            val num1 = etMainNum1.text.toString().toDouble()
+            val num2 = etMainNum2.text.toString().toDouble()
+
+            val soma = num2 + num1
+
+            tvMainSoma.text = soma.toString()
+
+        }
 
 
     }

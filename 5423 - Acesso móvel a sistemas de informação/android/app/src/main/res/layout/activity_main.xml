@@ -86,4 +86,47 @@
         android:text="Submit"
         />
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:id="@+id/etMainNum1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:hint="Idade"
+            android:inputType="number"
+            android:layout_weight="1"
+            />
+        <EditText
+            android:id="@+id/etMainNum2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:hint="Idade"
+            android:inputType="number"
+            android:layout_weight="1"
+            />
+
+
+        <TextView
+            android:id="@+id/tvMainSoma"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ola mundo"
+            />
+
+        <Button
+            android:id="@+id/btnMainSoma"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Soma"
+            />
+
+
+
+
+    </LinearLayout>
+
 </LinearLayout>
