@@ -9,27 +9,57 @@
     android:orientation="vertical"
     >
 
-
     <TextView
+        android:id="@+id/tvMainHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:text="Ola Mundo"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="13pt"
+        />
+    <TextView
+        android:id="@+id/tvMainMsg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ola Mundo"
-        android:fontFamily="@string/material_motion_easing_decelerated"
+        android:textAlignment="center"
+        android:textSize="40dp"
+
         />
     <Space
         android:layout_width="match_parent"
-        android:layout_height="40pt"
+        android:layout_height="20pt"
         />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
+        <!--
+         <EditText
+            android:id="@+id/etMainNome"  <- Id do elemento
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:hint="Nome"
+            android:inputType="text"
+            android:layout_weight="6"
+            />
 
+              -->
 
         <EditText
+            android:id="@+id/etMainNome"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:hint="Nome"
             android:inputType="text"
             android:layout_weight="6"
@@ -39,13 +69,21 @@
             android:layout_height="match_parent"
             />
         <EditText
+            android:id="@+id/etMainIdade"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:hint="Idade"
             android:inputType="number"
             android:layout_weight="1"
             />
 
     </LinearLayout>
+    <Button
+        android:id="@+id/btnMainSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="Submit"
+        />
 
 </LinearLayout>
