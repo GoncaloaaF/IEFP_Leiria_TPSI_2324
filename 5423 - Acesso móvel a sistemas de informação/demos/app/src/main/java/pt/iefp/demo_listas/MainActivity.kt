@@ -31,7 +31,6 @@ import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -46,17 +45,16 @@ class MainActivity : ComponentActivity() {
             var myAge by remember {
                 mutableStateOf(0)
             }
-            
+
+
             var listaMsg = remember {
-                mutableListOf<String>()
+                mutableStateOf(mutableListOf<String>())
             }
 
-                
+
             Column {
 
                 Column {
-
-                    Text(text = msg, fontSize = 25.sp)
 
                     Row {
 
@@ -95,34 +93,29 @@ class MainActivity : ComponentActivity() {
                         listaMsg.add(msg)
 
                     }) {
-                        Text(text = "Adicionar",
+                        Text(
+                            text = "Adicionar",
                             textAlign = TextAlign.Center,
                             modifier = Modifier.fillMaxWidth()
                         )
                     }
                 } // Column input
 
-                
-             LazyColumn {
-              items(listaMsg){ msg ->
-                  linha(msg = msg)
-              }
-             }
 
-
-
+                LazyColumn {
+                    items(listaMsg) { msg ->
+                        linha(msg = msg)
+                    }
+                }
             }// main Column
         } //setContent
     }// onCreate
 
 
     @Composable
-    fun linha(msg: String){
-
+    fun linha(msg: String) {
         Text(text = msg)
-
     }
-
 } // MainActivity
 
 
