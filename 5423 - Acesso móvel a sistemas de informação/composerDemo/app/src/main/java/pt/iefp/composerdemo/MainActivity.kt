@@ -66,8 +66,7 @@ class MainActivity : ComponentActivity() {
                     fontWeight = FontWeight.ExtraBold,
                     fontSize = 40.sp,
                     fontStyle = FontStyle.Italic,
-                    modifier = Modifier.
-                )
+                   )
 
                 Row {
                     Text(
