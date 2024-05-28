@@ -3,10 +3,13 @@ package pt.iefp.demo_listas
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -18,16 +21,22 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+
+data class Mensagem(var nome:String, var idade:Int?)
 
 class MainActivity : ComponentActivity() {
 
@@ -35,22 +44,19 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            var msg by remember {
-                mutableStateOf("")
-            }
+
+            // @State var myName = ""
 
             var myName by remember {
                 mutableStateOf("")
             }
             var myAge by remember {
-                mutableStateOf(0)
+                mutableStateOf("")
             }
-
-
-            var listaMsg = remember {
-                mutableStateOf(mutableListOf<String>())
+            
+            var mensagens = remember {
+                mutableStateListOf<Mensagem>()
             }
-
 
             Column {
 
@@ -58,7 +64,7 @@ class MainActivity : ComponentActivity() {
 
                     Row {
 
-                        TextField(
+                        OutlinedTextField(
                             value = myName,
                             onValueChange = { it ->
                                 myName = it
@@ -73,9 +79,9 @@ class MainActivity : ComponentActivity() {
                         Spacer(modifier = Modifier.width(8.dp))
 
                         OutlinedTextField(
-                            value = myAge.toString(),
+                            value = myAge,
                             onValueChange = { it ->
-                                myAge = it.toInt()
+                                myAge = it
                             },
                             label = {
                                 Text(text = "Idade: ")
@@ -89,12 +95,15 @@ class MainActivity : ComponentActivity() {
 
                     Button(onClick = {
 
-                        msg = "$myName -> $myAge "
-                        listaMsg.add(msg)
+                        if (myName.isNotEmpty() && myAge.isNotEmpty()) {
+
+                            mensagens.add(Mensagem(myName, myAge.toInt()))
+                        }
+                        myName = ""
+                        myAge = ""
 
                     }) {
-                        Text(
-                            text = "Adicionar",
+                        Text(text = "Adicionar",
                             textAlign = TextAlign.Center,
                             modifier = Modifier.fillMaxWidth()
                         )
@@ -102,25 +111,48 @@ class MainActivity : ComponentActivity() {
                 } // Column input
 
 
-                LazyColumn {
-                    items(listaMsg) { msg ->
-                        linha(msg = msg)
-                    }
-                }
+             LazyColumn {
+              items(mensagens){ msg ->
+                  linha(msg)
+                  Spacer(modifier = Modifier.height(8.dp))
+              }
+             }
+
+
+
             }// main Column
         } //setContent
     }// onCreate
 
 
     @Composable
-    fun linha(msg: String) {
-        Text(text = msg)
+    fun linha(mensagem: Mensagem){
+
+        var f by remember {
+            mutableStateOf("foo")
+        }
+
+       Column(
+           modifier = Modifier
+           .fillMaxWidth()
+           .clickable {
+               f = "novo txt"
+               println(mensagem)
+           }
+               .padding(18.dp)
+       ) {
+           Text(text = " $f = nome: ${mensagem.nome}",
+              fontSize = 20.sp,
+               fontWeight = FontWeight.Bold,
+
+           )
+
+           Text(text = "${mensagem.idade}",
+               fontFamily = FontFamily.Cursive
+
+           )
+       }
+
     }
+
 } // MainActivity
-
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-
-}
