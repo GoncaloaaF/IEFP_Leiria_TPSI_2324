@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "pt.iefp.vm_listas"
+    namespace = "pt.iefp.load_api"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "pt.iefp.vm_listas"
+        applicationId = "pt.iefp.load_api"
         minSdk = 30
         targetSdk = 34
         versionCode = 1
@@ -67,7 +67,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    
 }
