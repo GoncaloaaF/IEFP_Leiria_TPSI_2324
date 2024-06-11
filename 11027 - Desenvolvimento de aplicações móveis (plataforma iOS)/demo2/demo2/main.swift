@@ -5,6 +5,8 @@
 //  Created by Gonçalo Feliciano on 11/06/2024.
 //
 
+import Foundation
+
 
 
 print("--------funcs---------")
@@ -136,10 +138,20 @@ demo(idade2: 31, nome: "Gonçalo", idade:20)
 print("-------")
 demo(idade2: 21, idade:21)
 
+var data:Date
+
+
+print("idade:", terminator: " ")
+var input = readLine()!
+
+
+var i = Int(input)
+
+print(i ?? -1)
 
 
 /*
- 
+  
  !
  
  if let
@@ -150,3 +162,7 @@ demo(idade2: 21, idade:21)
  
  
  */
+
+
+
+
