@@ -55,8 +55,9 @@ print("--------")
 print("----collections----")
 /* collections
 
- arrays - []
- Dict -
+ arrays -    []
+             
+ Dict -      [:]
  set -
  
 
@@ -64,8 +65,9 @@ print("----collections----")
 print("----arrays----")
 // arrays
 
+var arr0:[Int] = []
 
-var arr1 = ["val1", "val2", "val3"]
+var arr1:[String] = ["val1", "val2", "val3"]
 print(arr1)
 
 arr1.append("Novo Val")
@@ -154,15 +156,154 @@ arr1[0] = "foo boo"
 print(arr1[0])
 
 
+
+
+var arr3 = [10, 20, 5, 30]
+arr3.sort { lhs, rhs in
+    lhs  < rhs
+}
+
+print(arr3)
+
+
+arr3 = [10, 20, 5, 30]
+arr3.sort{ $0 < $1 }
+
+print(arr3)
+
+
+arr1 = []
+print(arr1.max() ?? 0)
+
+
 // Dict
 
+print("----------dict--------")
+
+var dict0:[String: Int] = [ : ]
+
+
+var dict1 = ["Key": "Value 3", "Key 2": "Value 3", "Key 3": "Value 3" ]
+print(dict1)
+
+
+print(dict1["Key"]!)
+
+dict1["Key"] = "ola Mundo"
+
+print(dict1["Key"]!)
+
+
+dict1["Nova Key"] = "ola Mundo"
+
+print(dict1)
+
+print(dict1["Nova Key"]!)
+
+dict1["Nova Key"] = nil
+
+print(dict1)
+
+print("-- for --")
+for (k ,v)  in dict1{
+    
+    print(k)
+    print(v)
+}
+
+
+      
+print("-- forEach --")
+dict1.forEach { (k ,v)  in
+    print(k)
+    print(v)
+}
+
+      
+print("-- removeValue --")
+print(dict1.removeValue(forKey: "Key") ?? "Key Invalida")
+print(dict1)
+
+
+print("-- updateValue --")
+//print(dict1.updateValue("foo", forKey: "Key 2222"))
+print(dict1)
+
+print("---")
+//print(dict1.updateValue("boo", forKey: "Key 2222"))
+
+
+/*
+    let aux = dict[key]
+    dict[key] = val
+    return aux
+ */
+ 
+ 
+ 
+print(dict1)
 
 
 
-
-
+print("------- Set --------")
 // set
 
 
+
+var set1:Set = ["Ovo", "Farinha", "sal", "Agua"]
+
+print(set1)
+
+let r = set1.insert("Azeite")
+
+print(set1)
+print(r)
+
+let r2 = set1.insert("Azeite")
+
+print(set1)
+print(r2)
+
+print(set1.remove("Agua")!)
+print(set1)
+
+
+var set2:Set<String>
+
+set2 = ["Agua", "Farinha", "sal", "Fermento"]
+
+print(set1.intersection(set2))
+print(type(of: set1.intersection(set2)))
+
+
+
+
+print(set1.union(set2))
+
+print(set1.symmetricDifference(set2))
+
+print(set1.subtracting(set2))
+print(set2.subtracting(set1))
+
+
+var set3:Set<String> = ["Ovo", "Farinha", "sal", "Agua", "Azeite"]
+
+print("-----")
+print(set1)
+print(set2)
+print(set3)
+
+
+print("-----")
+
+print(set1.isSubset(of: set3))
+print(set2.isSubset(of: set3))
+
+print("--")
+print(set3.isSuperset(of: set1))
+print(set3.isSuperset(of: set2))
+
+
+set1.
 
 
