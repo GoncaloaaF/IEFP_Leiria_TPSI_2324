@@ -18,3 +18,6 @@
   * Arrays
   * Set
   * Dict
+* Classes e Structs
+ * Computed property
+ * Property observers
