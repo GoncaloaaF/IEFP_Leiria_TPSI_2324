@@ -19,5 +19,7 @@
   * Set
   * Dict
 * Classes e Structs
- * Computed property
- * Property observers
+  * static 
+  * Computed property
+  * Property observers
+* Singleton 
