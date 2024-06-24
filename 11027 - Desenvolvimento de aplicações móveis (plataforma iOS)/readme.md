@@ -22,4 +22,5 @@
   * static 
   * Computed property
   * Property observers
+  * lazy
 * Singleton 
