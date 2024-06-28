@@ -13,14 +13,17 @@ print("-----class------")
 let ct = Contacto(nome: "Nome Ct", empresa: "IEFP", email: "bla_bla@iefp.pt", telefone: 1232444113)
 
 print(ct.nome)
-print(ct.getEmpresa())
+print(ct.empresa!)
 
+ct.empresa = nil
+
+print(ct.empresa!)
 print("--")
 
 let ct2 = Contacto(nome: "Nome Ct", email: "bla_bla@iefp.pt", telefone: 1232444113)
 
 print(ct2.nome)
-print(ct2.getEmpresa())
+print(ct2.empresa!)
 
 print("--")
 var ct3 = ct2
@@ -54,7 +57,7 @@ print("-----struct------")
 let cts = Contacto2(nome: "Nome Ct", empresa: "IEFP", email: "bla_bla@iefp.pt", telefone: 1232444113)
 
 print(cts.nome)
-print(cts.empresa!)
+print(cts.getEmpresa())
 
 
 let cts2 = Contacto2(nome: "Nome Ct", email: "bla_bla@iefp.pt", telefone: 1232444113)

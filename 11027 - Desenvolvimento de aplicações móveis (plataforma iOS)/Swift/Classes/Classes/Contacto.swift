@@ -13,23 +13,36 @@ class foo{
 
 class Contacto{
     var nome: String
-    var empresa: String?
+    private var _empresa: String?
+    var empresa:String?{
+    
+        get{
+            self._empresa ?? "Sem empresa"
+        }
+        
+        set{
+            self._empresa = newValue
+        }
+    }
+    
+    
     var email: String
     var telefone: Int
     var teste: foo?
     
     init(nome: String, empresa: String? = nil, email: String, telefone: Int) {
         self.nome = nome
-        self.empresa = empresa
+        self._empresa = empresa
         self.email = email
         self.telefone = telefone
     }
     
-
+/*
     //v1
     func getEmpresa() -> String{
         self.empresa ?? "Sem empresa"
     }
+    */
     
 }
 
