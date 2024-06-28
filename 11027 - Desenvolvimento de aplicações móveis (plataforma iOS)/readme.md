@@ -23,4 +23,6 @@
   * Computed property
   * Property observers
   * lazy
+  * herança
+  * extenções
 * Singleton 
