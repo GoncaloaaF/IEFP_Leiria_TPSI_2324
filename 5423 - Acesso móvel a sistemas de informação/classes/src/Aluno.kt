@@ -3,7 +3,6 @@ class Aluno {
     var idade:Int? = null
     var turma:Turma? = null
 
-
     constructor(){
         nome = "Zeca"
         idade = -1
