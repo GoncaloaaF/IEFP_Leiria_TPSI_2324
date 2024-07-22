@@ -11,16 +11,14 @@ import UIKit
 struct ContentView: View {
     
     @State var myText = "Hello,!"
-    
     @State var myTFText = ""
-    
     @State var myTFText2 = ""
     
     var body: some View {
         VStack {
             
             
-            
+        
             TextField("nome", text: $myTFText2 )
                 .font(.title3)
                 .frame(width: 250)
@@ -29,9 +27,7 @@ struct ContentView: View {
             Text(myTFText2)
                 .font(.largeTitle)
             
-            
-            
-            
+        
             TextField("nome", text: $myTFText )
                 .font(.title3)
                 .frame(width: 250)
